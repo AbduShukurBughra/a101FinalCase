@@ -6,8 +6,8 @@
 
     <test name="Tests For Hepsiburada"   >
         <classes>
-            <class name="com.a101.testRun.UserLogin" />
-            <class name="com.a101.testRun.NonUserLogin" />
+            <class name="com.a101.testRunner.NoneUserLogin" />
+            <class name="com.a101.testRunner.UserLogin" />
         </classes>
     </test>
 </suite>

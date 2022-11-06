@@ -1,4 +1,4 @@
-package com.a101.testRun;
+package com.a101.testRunner;
 
 import com.a101.logger.Log;
 import com.a101.pages.HomePage;

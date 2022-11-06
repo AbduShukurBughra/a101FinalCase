@@ -21,25 +21,25 @@ public class ProductPage {
     @FindBy(xpath = "//div[contains(text(),'ARA')]")
     WebElement searchButton;
 
-    @FindBy(xpath = "//h3[contains(text(),'Samsung 27\" LS27AG320NUXUF 165Hz 1ms HDMI Dp Frees')]")
+    @FindBy(xpath = "//h3[contains(text(),'iPhone 14 Pro Max 256 GB')]")
     WebElement specificProduct;
 
-    @FindBy(id = "addToCart")
+    @FindBy(xpath = "//*[@class='optionsLength']")
+    WebElement allSellers;
+
+    @FindBy(xpath = "(//*[@class='add-to-basket button'])[3]")
     WebElement addFirstProduct;
 
-    @FindBy(xpath = "//a[@class='checkoutui-Modal-iHhyy79iR28NvF33vKJb']")
-    WebElement closeNotificationLink;
-
-    @FindBy(xpath = "(//div[@class='addToCart']//button)[2]")
+    @FindBy(xpath = "(//*[@class='add-to-basket button'])[4]")
     WebElement addSecondProduct;
 
-    @FindBy(xpath = "//button[.='Sepete git']")
+    @FindBy(id = "shoppingCart")
     WebElement goToCartButton;
 
-    @FindBy(xpath = "(//a[.='Samsung 27\" LS27AG320NUXUF 165Hz 1ms HDMI Dp Freesync Va LED M'])[1]")
+    @FindBy(xpath = "(//a[.='iPhone 14 Pro Max 256 GB'])[1]")
     WebElement checkFirstProduct;
 
-    @FindBy(xpath = "(//a[.='Samsung 27\" LS27AG320NUXUF 165Hz 1ms HDMI Dp Freesync Va LED M'])[2]")
+    @FindBy(xpath = "(//a[.='iPhone 14 Pro Max 256 GB'])[2]")
     WebElement checkSecondProduct;
 
     public void fillSearchBox(String productName){
@@ -64,14 +64,14 @@ public class ProductPage {
         }
     }
 
+    public void clickAllSellers(){
+        utility.waitForElementPresent(allSellers);
+        allSellers.click();
+    }
+
     public void clickAddFirstProduct(){
         utility.waitForElementPresent(addFirstProduct);
         addFirstProduct.click();
-    }
-
-    public void clickCloseNotificationLink(){
-        utility.waitForElementPresent(closeNotificationLink);
-        closeNotificationLink.click();
     }
 
     public void clickAddSecondProduct(){
@@ -87,7 +87,7 @@ public class ProductPage {
     public boolean verifyIsSelectedCorrect(){
         utility.waitForElementPresent(checkFirstProduct);
         utility.waitForElementPresent(checkSecondProduct);
-        if (checkFirstProduct.getText().contains("LS27AG320NUXUF") && checkSecondProduct.getText().contains("LS27AG320NUXUF")){
+        if (checkFirstProduct.getText().contains("iPhone") && checkSecondProduct.getText().contains("iPhone")){
             System.out.println("Selected Products were correct");
             return true;
         }else {
